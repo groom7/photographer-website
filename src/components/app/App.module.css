@@ -51,17 +51,3 @@
 .navLink:hover {
   color: #37404e;
 }
-
-.gallery {
-  width: 100%;
-  padding-top: 40px;
-}
-
-.image {
-  transition: all 0.1s ease-in-out;
-}
-
-.image:hover {
-  cursor: pointer;
-  filter: brightness(1.1) contrast(0.95);
-}
