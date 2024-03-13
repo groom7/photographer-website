@@ -46,6 +46,8 @@ module.exports = {
     'react/function-component-definition': 'off',
     'react/jsx-props-no-spreading': 'off',
     '@typescript-eslint/lines-between-class-members': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-noninteractive-element-interactions': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'no-underscore-dangle': ['error', { allow: ['_id'] }],
     'no-param-reassign': [
