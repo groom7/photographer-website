@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
-import CloseButton from 'react-bootstrap/CloseButton';
 import styles from './Gallery.module.css';
 import IMG4409 from '../../assets/images/IMG_4409-HDR.webp';
 import IMG4438 from '../../assets/images/IMG_4438-HDR.webp';
@@ -35,32 +34,27 @@ function Gallery() {
       </ResponsiveMasonry>
       <div
         className={`${styles.modal} ${active ? styles.modalActive : ''}`}
-        onClick={() => setActive(false)}
+        onClick={() => {
+          setActive(false);
+        }}
         role="menuitem"
         tabIndex={0}
       >
-        <CloseButton className={styles.closeButton} />
-        <div
-          className={styles.modalContent}
-          onClick={(event) => event.stopPropagation()}
-          role="menuitem"
-          tabIndex={0}
-        >
-          {/* <div className={styles.modalContentWrapper}> */}
+        <div className={styles.modalContent} role="menuitem" tabIndex={0}>
           <img
             className={styles.modalImage}
             src={galleryImages[imageIndex]}
             alt="interior"
-            onClick={() => {
+            onClick={(event) => {
               if (imageIndex < galleryImages.length - 1) {
                 setImageIndex((index) => index + 1);
               } else {
                 setImageIndex(0);
               }
+              event.stopPropagation();
             }}
             key={galleryImages[imageIndex]}
           />
-          {/* </div> */}
         </div>
       </div>
     </div>

@@ -1,9 +1,3 @@
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .app {
   display: flex;
   padding: 28px;
@@ -50,4 +44,11 @@
 
 .navLink:hover {
   color: #37404e;
+}
+
+@media screen and (max-width: 380px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+  }
 }
