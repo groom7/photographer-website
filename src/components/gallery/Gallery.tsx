@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import CloseButton from 'react-bootstrap/CloseButton';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './Gallery.module.css';
 import IMG4409 from '../../assets/images/IMG_4409-HDR.webp';
 import IMG4438 from '../../assets/images/IMG_4438-HDR.webp';
