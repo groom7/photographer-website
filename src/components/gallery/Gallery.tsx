@@ -9,6 +9,13 @@ import IMG4598 from '../../assets/images/IMG_4598-HDR.webp';
 import IMG4643 from '../../assets/images/IMG_4643-HDR.webp';
 
 const galleryImages = [IMG4409, IMG4438, IMG4449, IMG4523, IMG4598, IMG4643];
+const getPreviousIndex = (currentIndex: number, imagesArray: string[]) => {
+  if (currentIndex > 0) {
+    return currentIndex - 1;
+  }
+
+  return imagesArray.length - 1;
+};
 
 function Gallery() {
   const [active, setActive] = useState(true);
@@ -40,6 +47,28 @@ function Gallery() {
         role="menuitem"
         tabIndex={0}
       >
+        <div
+          className={`${styles.arrow} ${styles.arrowLeft}`}
+          onClick={(event) => {
+            setImageIndex(getPreviousIndex(imageIndex, galleryImages));
+            event.stopPropagation();
+          }}
+          role="menuitem"
+          tabIndex={0}
+        >
+          <div className={styles.arrowLeftTop} />
+          <div className={styles.arrowLeftBottom} />
+        </div>
+        <span
+          className={styles.closeButton}
+          onClick={() => {
+            setActive(false);
+          }}
+          role="menuitem"
+          tabIndex={0}
+        >
+          &times;
+        </span>
         <div className={styles.modalContent} role="menuitem" tabIndex={0}>
           <img
             className={styles.modalImage}

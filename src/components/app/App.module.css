@@ -46,7 +46,7 @@
   color: #37404e;
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 480px) {
   .app {
     display: flex;
     flex-direction: column;
