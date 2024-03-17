@@ -58,7 +58,6 @@
   margin: 16px 0 13px 32px;
   cursor: pointer;
   z-index: 5;
-  /* transform: scale(-1, -1); */
 }
 
 .arrowLeftTop,
@@ -83,6 +82,45 @@
 }
 
 .arrowLeftBottom {
+  bottom: 50%;
+  transform: rotate(-45deg) translateY(120%);
+  transform-origin: center left;
+}
+
+.arrowRight {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  width: 50px;
+  height: 100px;
+  margin: 16px 32px 13px 0;
+  cursor: pointer;
+  z-index: 5;
+  transform: scale(-1, -1);
+}
+
+.arrowRightTop,
+.arrowRightBottom {
+  position: absolute;
+  background:  #8e959f;
+  width: 32px;
+  height: 3px;
+  left: 0px;
+  transition: all 0.2s ease-in-out;
+}
+
+.arrowRight:hover .arrowRightTop,
+.arrowRight:hover .arrowRightBottom {
+  background-color: #37404e;
+}
+
+.arrowRightTop {
+  top: 50%;
+  transform: rotate(45deg) translateY(-120%);
+  transform-origin: center left;
+}
+
+.arrowRightBottom {
   bottom: 50%;
   transform: rotate(-45deg) translateY(120%);
   transform-origin: center left;

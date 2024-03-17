@@ -17,8 +17,18 @@ const getPreviousIndex = (currentIndex: number, imagesArray: string[]) => {
   return imagesArray.length - 1;
 };
 
+const getNextIndex = (currentIndex: number, imagesArray: string[]) => {
+  const firstIndex = 0;
+
+  if (currentIndex < imagesArray.length - 1) {
+    return currentIndex + 1;
+  }
+
+  return firstIndex;
+};
+
 function Gallery() {
-  const [active, setActive] = useState(true);
+  const [active, setActive] = useState(false);
   const [imageIndex, setImageIndex] = useState(0);
 
   return (
@@ -26,14 +36,19 @@ function Gallery() {
       <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 1230: 2, 1650: 3, 2100: 4 }}>
         <Masonry gutter="12px">
           {galleryImages.map((image, index) => (
-            <img
+            <input
               className={styles.image}
               src={image}
-              alt="interior"
               onClick={() => {
                 setActive(true);
                 setImageIndex(index);
               }}
+              onKeyDown={() => {
+                setActive(true);
+                setImageIndex(index);
+              }}
+              type="image"
+              alt="interior"
               key={image}
             />
           ))}
@@ -44,8 +59,7 @@ function Gallery() {
         onClick={() => {
           setActive(false);
         }}
-        role="menuitem"
-        tabIndex={0}
+        role="presentation"
       >
         <div
           className={`${styles.arrow} ${styles.arrowLeft}`}
@@ -53,15 +67,36 @@ function Gallery() {
             setImageIndex(getPreviousIndex(imageIndex, galleryImages));
             event.stopPropagation();
           }}
-          role="menuitem"
-          tabIndex={0}
+          onKeyDown={(event) => {
+            setImageIndex(getPreviousIndex(imageIndex, galleryImages));
+            event.stopPropagation();
+          }}
+          role="presentation"
         >
           <div className={styles.arrowLeftTop} />
           <div className={styles.arrowLeftBottom} />
         </div>
+        <div
+          className={`${styles.arrow} ${styles.arrowRight}`}
+          onClick={(event) => {
+            setImageIndex(getNextIndex(imageIndex, galleryImages));
+            event.stopPropagation();
+          }}
+          onKeyDown={(event) => {
+            setImageIndex(getNextIndex(imageIndex, galleryImages));
+            event.stopPropagation();
+          }}
+          role="presentation"
+        >
+          <div className={styles.arrowRightTop} />
+          <div className={styles.arrowRightBottom} />
+        </div>
         <span
           className={styles.closeButton}
           onClick={() => {
+            setActive(false);
+          }}
+          onKeyDown={() => {
             setActive(false);
           }}
           role="menuitem"
@@ -70,18 +105,19 @@ function Gallery() {
           &times;
         </span>
         <div className={styles.modalContent} role="menuitem" tabIndex={0}>
-          <img
+          <input
             className={styles.modalImage}
-            src={galleryImages[imageIndex]}
-            alt="interior"
             onClick={(event) => {
-              if (imageIndex < galleryImages.length - 1) {
-                setImageIndex((index) => index + 1);
-              } else {
-                setImageIndex(0);
-              }
+              setImageIndex(getNextIndex(imageIndex, galleryImages));
               event.stopPropagation();
             }}
+            onKeyDown={(event) => {
+              setImageIndex(getNextIndex(imageIndex, galleryImages));
+              event.stopPropagation();
+            }}
+            src={galleryImages[imageIndex]}
+            type="image"
+            alt="interior"
             key={galleryImages[imageIndex]}
           />
         </div>
