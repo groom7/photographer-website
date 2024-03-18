@@ -55,9 +55,10 @@
   top: 50%;
   width: 50px;
   height: 100px;
+  transform: translateY(-50%);
   margin: 16px 0 13px 32px;
-  cursor: pointer;
   z-index: 5;
+  cursor: pointer;
 }
 
 .arrowLeftTop,
@@ -93,10 +94,10 @@
   top: 50%;
   width: 50px;
   height: 100px;
+  transform: translateY(-50%) scale(-1, -1) ;
   margin: 16px 32px 13px 0;
   cursor: pointer;
   z-index: 5;
-  transform: scale(-1, -1);
 }
 
 .arrowRightTop,

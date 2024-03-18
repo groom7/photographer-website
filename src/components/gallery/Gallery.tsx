@@ -62,7 +62,7 @@ function Gallery() {
         role="presentation"
       >
         <div
-          className={`${styles.arrow} ${styles.arrowLeft}`}
+          className={`${styles.arrowLeft}`}
           onClick={(event) => {
             setImageIndex(getPreviousIndex(imageIndex, galleryImages));
             event.stopPropagation();
@@ -77,7 +77,7 @@ function Gallery() {
           <div className={styles.arrowLeftBottom} />
         </div>
         <div
-          className={`${styles.arrow} ${styles.arrowRight}`}
+          className={`${styles.arrowRight}`}
           onClick={(event) => {
             setImageIndex(getNextIndex(imageIndex, galleryImages));
             event.stopPropagation();
