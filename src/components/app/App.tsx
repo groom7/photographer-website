@@ -1,9 +1,9 @@
-import React from 'react';
-import { NavLink, Route, Routes } from 'react-router-dom';
-import styles from './App.module.css';
-import Gallery from '../gallery/Gallery';
+import React, { FC } from "react";
+import { NavLink, Route, Routes } from "react-router-dom";
+import styles from "./App.module.css";
+import Gallery from "../gallery/Gallery";
 
-function App() {
+const App: FC = () => {
   return (
     <Routes>
       <Route
@@ -41,6 +41,6 @@ function App() {
       />
     </Routes>
   );
-}
+};
 
 export default App;

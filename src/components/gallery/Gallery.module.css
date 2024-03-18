@@ -51,59 +51,28 @@
   color: #37404e;
 }
 
-.arrowLeft {
+.arrow {
   position: fixed;
-  left: 0;
   top: 50%;
   width: 50px;
   height: 100px;
   transform: translateY(-50%);
-  margin: 16px 0 13px 16px;
+  margin: 16px;
   z-index: 5;
   cursor: pointer;
 }
 
-.arrowLeftTop,
-.arrowLeftBottom {
-  position: absolute;
-  background:  #8e959f;
-  width: 32px;
-  height: 3px;
-  left: 0px;
-  transition: all 0.2s ease-in-out;
-}
-
-.arrowLeft:hover .arrowLeftTop,
-.arrowLeft:hover .arrowLeftBottom {
-  background-color: #37404e;
-}
-
-.arrowLeftTop {
-  top: 50%;
-  transform: rotate(45deg) translateY(-120%);
-  transform-origin: center left;
-}
-
-.arrowLeftBottom {
-  bottom: 50%;
-  transform: rotate(-45deg) translateY(120%);
-  transform-origin: center left;
+.arrowLeft {
+  left: 0;
 }
 
 .arrowRight {
-  position: fixed;
   right: 0;
-  top: 50%;
-  width: 50px;
-  height: 100px;
   transform: translateY(-50%) scale(-1, -1) ;
-  margin: 16px 16px 13px 0;
-  cursor: pointer;
-  z-index: 5;
 }
 
-.arrowRightTop,
-.arrowRightBottom {
+.arrowTopLine,
+.arrowBottomLine {
   position: absolute;
   background:  #8e959f;
   width: 32px;
@@ -112,21 +81,21 @@
   transition: all 0.2s ease-in-out;
 }
 
-.arrowRight:hover .arrowRightTop,
-.arrowRight:hover .arrowRightBottom {
-  background-color: #37404e;
-}
-
-.arrowRightTop {
+.arrowTopLine {
   top: 50%;
   transform: rotate(45deg) translateY(-120%);
   transform-origin: center left;
 }
 
-.arrowRightBottom {
+.arrowBottomLine {
   bottom: 50%;
   transform: rotate(-45deg) translateY(120%);
   transform-origin: center left;
+}
+
+.arrow:hover .arrowTopLine,
+.arrow:hover .arrowBottomLine {
+  background-color: #37404e;
 }
 
 .modalContent {
