@@ -21,7 +21,13 @@ function App() {
                     Главная
                   </NavLink>
                   <NavLink to="/about" className={styles.navLink}>
+                    Публикации
+                  </NavLink>
+                  <NavLink to="/about" className={styles.navLink}>
                     Архив
+                  </NavLink>
+                  <NavLink to="/about" className={styles.navLink}>
+                    Контакты
                   </NavLink>
                   <NavLink to="/about" className={styles.navLink}>
                     О себе

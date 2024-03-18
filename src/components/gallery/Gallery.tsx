@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import styles from './Gallery.module.css';
 import IMG4409 from '../../assets/images/IMG_4409-HDR.webp';
@@ -30,6 +30,16 @@ const getNextIndex = (currentIndex: number, imagesArray: string[]) => {
 function Gallery() {
   const [active, setActive] = useState(false);
   const [imageIndex, setImageIndex] = useState(0);
+
+  useEffect(() => {
+    if (active) {
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [active]);
 
   return (
     <div className={styles.gallery}>
