@@ -33,6 +33,7 @@ function Gallery() {
 
   useEffect(() => {
     if (active) {
+      document.body.style.position = 'relative';
       document.body.style.overflow = 'hidden';
       document.body.style.paddingRight = '17px';
     }
