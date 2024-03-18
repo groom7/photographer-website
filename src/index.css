@@ -32,10 +32,6 @@ body {
   margin: 0;
 }
 
-body.modalActive {
-  overflow: hidden;
-}
-
 a {
   text-decoration: none;
   color: inherit;
