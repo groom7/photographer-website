@@ -7,9 +7,9 @@ import IMG4449 from "../../assets/images/IMG_4449-HDR.webp";
 import IMG4523 from "../../assets/images/IMG_4523-HDR.webp";
 import IMG4598 from "../../assets/images/IMG_4598-HDR.webp";
 import IMG4643 from "../../assets/images/IMG_4643-HDR.webp";
-import SliderArrow from "../slider-arrow/SliderArrow";
 import getNextIndex from "../../utils/getNextIndex";
 import getPreviousIndex from "../../utils/getPreviousIndex";
+import Modal from "../modal/Modal";
 
 const galleryImages = [IMG4409, IMG4438, IMG4449, IMG4523, IMG4598, IMG4643];
 
@@ -79,48 +79,13 @@ const Gallery: FC = () => {
           ))}
         </Masonry>
       </ResponsiveMasonry>
-      <div
-        className={`${styles.modal} ${modalActive ? styles.modalActive : ""}`}
-        onClick={() => {
-          setModalActive(false);
-        }}
-        role="presentation"
-      >
-        <SliderArrow
-          side="left"
-          setImageIndex={setImageIndex}
-          imageIndex={imageIndex}
-          galleryImages={galleryImages}
-        />
-        <SliderArrow
-          side="right"
-          setImageIndex={setImageIndex}
-          imageIndex={imageIndex}
-          galleryImages={galleryImages}
-        />
-        <span
-          className={styles.closeButton}
-          onClick={() => {
-            setModalActive(false);
-          }}
-          role="presentation"
-        >
-          &times;
-        </span>
-        <div className={styles.modalContent} role="presentation">
-          <input
-            className={styles.modalImage}
-            onClick={(event) => {
-              setImageIndex(getNextIndex(imageIndex, galleryImages));
-              event.stopPropagation();
-            }}
-            src={galleryImages[imageIndex]}
-            type="image"
-            alt="interior"
-            key={galleryImages[imageIndex]}
-          />
-        </div>
-      </div>
+      <Modal
+        modalActive={modalActive}
+        setModalActive={setModalActive}
+        imageIndex={imageIndex}
+        setImageIndex={setImageIndex}
+        galleryImages={galleryImages}
+      />
     </div>
   );
 };

@@ -5,7 +5,7 @@ import { ISliderArrowProps } from "../../utils/types";
 import getNextIndex from "../../utils/getNextIndex";
 
 const SliderArrow: FC<ISliderArrowProps> = (props) => {
-  const { side, setImageIndex, imageIndex, galleryImages } = props;
+  const { side, imageIndex, setImageIndex, galleryImages } = props;
   const handleClick = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent> | React.KeyboardEvent<HTMLDivElement>
   ) => {
