@@ -9,15 +9,16 @@ import IMG4598 from "../../assets/images/IMG_4598-HDR.webp";
 import IMG4643 from "../../assets/images/IMG_4643-HDR.webp";
 import SliderArrow from "../slider-arrow/SliderArrow";
 import getNextIndex from "../../utils/getNextIndex";
+import getPreviousIndex from "../../utils/getPreviousIndex";
 
 const galleryImages = [IMG4409, IMG4438, IMG4449, IMG4523, IMG4598, IMG4643];
 
 const Gallery: FC = () => {
-  const [active, setActive] = useState(false);
+  const [modalActive, setModalActive] = useState(false);
   const [imageIndex, setImageIndex] = useState(0);
 
   useEffect(() => {
-    if (active) {
+    if (modalActive) {
       document.body.style.position = "relative";
       document.body.style.overflow = "hidden";
       document.body.style.paddingRight = "17px";
@@ -27,7 +28,37 @@ const Gallery: FC = () => {
       document.body.style.overflow = "unset";
       document.body.style.paddingRight = "0px";
     };
-  }, [active]);
+  }, [modalActive]);
+
+  useEffect(() => {
+    const handleEscapePress = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setModalActive(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleEscapePress);
+
+    return () => {
+      window.removeEventListener("keydown", handleEscapePress);
+    };
+  }, [setModalActive]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft") {
+        setImageIndex(getPreviousIndex(imageIndex, galleryImages));
+      } else if (event.key === "ArrowRight") {
+        setImageIndex(getNextIndex(imageIndex, galleryImages));
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [imageIndex]);
 
   return (
     <div className={styles.gallery}>
@@ -38,11 +69,7 @@ const Gallery: FC = () => {
               className={styles.image}
               src={image}
               onClick={() => {
-                setActive(true);
-                setImageIndex(index);
-              }}
-              onKeyDown={() => {
-                setActive(true);
+                setModalActive(true);
                 setImageIndex(index);
               }}
               type="image"
@@ -53,9 +80,9 @@ const Gallery: FC = () => {
         </Masonry>
       </ResponsiveMasonry>
       <div
-        className={`${styles.modal} ${active ? styles.modalActive : ""}`}
+        className={`${styles.modal} ${modalActive ? styles.modalActive : ""}`}
         onClick={() => {
-          setActive(false);
+          setModalActive(false);
         }}
         role="presentation"
       >
@@ -74,24 +101,16 @@ const Gallery: FC = () => {
         <span
           className={styles.closeButton}
           onClick={() => {
-            setActive(false);
+            setModalActive(false);
           }}
-          onKeyDown={() => {
-            setActive(false);
-          }}
-          role="menuitem"
-          tabIndex={0}
+          role="presentation"
         >
           &times;
         </span>
-        <div className={styles.modalContent} role="menuitem" tabIndex={0}>
+        <div className={styles.modalContent} role="presentation">
           <input
             className={styles.modalImage}
             onClick={(event) => {
-              setImageIndex(getNextIndex(imageIndex, galleryImages));
-              event.stopPropagation();
-            }}
-            onKeyDown={(event) => {
               setImageIndex(getNextIndex(imageIndex, galleryImages));
               event.stopPropagation();
             }}
