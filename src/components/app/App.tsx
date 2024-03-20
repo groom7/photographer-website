@@ -1,44 +1,20 @@
-import React, { FC } from "react";
-import { NavLink, Route, Routes } from "react-router-dom";
-import styles from "./App.module.css";
-import Gallery from "../gallery/Gallery";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+// import styles from "./App.module.css";
+import Layout from "../layout/Layout";
+import MainPage from "../../pages/main-page/MainPage";
 
-const App: FC = () => {
+const App = () => {
   return (
     <Routes>
-      <Route
-        path="/"
-        element={
-          <div className={styles.app}>
-            <header className={styles.header}>
-              <NavLink to="/" className={styles.logoWrapper}>
-                <h1 className={styles.logoTitle}>Айрат Ахметханов</h1>
-                <span className={styles.logoSubTitle}>интерьерный фотограф</span>
-              </NavLink>
-              <nav className={styles.nav}>
-                <ul className={styles.navList} id="navList">
-                  <NavLink to="/" className={styles.navLink}>
-                    Главная
-                  </NavLink>
-                  <NavLink to="/about" className={styles.navLink}>
-                    Публикации
-                  </NavLink>
-                  <NavLink to="/about" className={styles.navLink}>
-                    Архив
-                  </NavLink>
-                  <NavLink to="/about" className={styles.navLink}>
-                    Контакты
-                  </NavLink>
-                  <NavLink to="/about" className={styles.navLink}>
-                    О себе
-                  </NavLink>
-                </ul>
-              </nav>
-            </header>
-            <Gallery />
-          </div>
-        }
-      />
+      <Route path="/" element={<Layout />}>
+        <Route index path="/" element={<MainPage />} />
+        <Route index path="/publications" element={<MainPage />} />
+        <Route index path="/archive" element={<MainPage />} />
+        <Route index path="/contact" element={<MainPage />} />
+        <Route index path="/about" element={<MainPage />} />
+        {/* <Route path="*" element={<Page404 />} /> */}
+      </Route>
     </Routes>
   );
 };

@@ -1,0 +1,12 @@
+.app {
+  display: flex;
+  padding: 28px;
+  gap: 28px;
+}
+
+@media screen and (max-width: 480px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+  }
+}
