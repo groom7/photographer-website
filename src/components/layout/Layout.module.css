@@ -4,15 +4,7 @@
   gap: 28px;
 }
 
-@media screen and (max-width: 480px) {
-  .layout {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
 .header {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -51,4 +43,108 @@
 
 .navLink:hover {
   color: #37404e;
+}
+
+.burgerMenuButton {
+  display: none;
+  width: 35px;
+  height: 32px;
+  position: relative;
+  cursor: pointer;
+}
+
+.burgerMenuButtonLine {
+  display: block;
+  position: absolute;
+  width: 35px;
+  height: 2px;
+  background:  #8e959f;
+  transition: all 0.2s ease-in-out;
+}
+
+.burgerMenuButton:hover .burgerMenuButtonLine {
+  background: #37404e;
+}
+
+.burgerMenuButtonLine:nth-last-child(3) {
+  bottom: 25%;
+}
+
+.burgerMenuButtonLine:nth-last-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.burgerMenuButtonLine:nth-last-child(1) {
+  top: 25%;
+}
+
+.closeButton {
+  display: none;
+  font-family: 'Open Sans';
+  font-size: 80px;
+  line-height: 0.4;
+  letter-spacing: -6px;
+  margin: 16px;
+  color: #8e959f;
+  transition: all 0.2s ease-in-out;
+  z-index: 999;
+}
+
+.closeButton:hover {
+  color: #37404e;
+}
+
+@media screen and (max-width: 576px) {
+  .layout {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    flex-direction: row;
+    background-color: #f0f0f0;
+    padding: 16px;
+  }
+
+  .logoWrapper {
+    margin-bottom: 0px;
+  }
+
+  .nav {
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: #f0f0f0;
+    padding: 16px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .burgerMenuButton {
+    display: block;
+    margin-left: auto;
+  }
+
+  .burgerMenuButton.burgerMenuActive {
+    display: none;
+  }
+
+  .burgerMenuActive {
+    transform: translateY(100vh);
+  }
+
+  .closeButtonActive {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+  }
 }
