@@ -11,3 +11,17 @@
   cursor: pointer;
   filter: brightness(1.1) contrast(0.95);
 }
+
+.arrow {
+  border: solid #8e959f;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  padding: 15px;
+  transition: all 0.2s ease-in-out;
+}
+
+.arrow:hover {
+  border-color: #37404e;
+}

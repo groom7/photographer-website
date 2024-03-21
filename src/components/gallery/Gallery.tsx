@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import ScrollToTop from "react-scroll-up";
 import styles from "./Gallery.module.css";
 import IMG4409 from "../../assets/images/IMG_4409-HDR.webp";
 import IMG4438 from "../../assets/images/IMG_4438-HDR.webp";
@@ -79,6 +80,9 @@ const Gallery: FC = () => {
           ))}
         </Masonry>
       </ResponsiveMasonry>
+      <ScrollToTop showUnder={160}>
+        <div className={styles.arrow} />
+      </ScrollToTop>
       <Modal
         modalActive={modalActive}
         setModalActive={setModalActive}
