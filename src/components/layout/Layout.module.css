@@ -79,20 +79,12 @@
   top: 25%;
 }
 
-.closeButton {
+.closeButtonWrapper {
+  position: relative;
   display: none;
-  font-family: 'Open Sans';
-  font-size: 80px;
-  line-height: 0.4;
-  letter-spacing: -6px;
+  width: 40px;
+  height: 40px;
   margin: 16px;
-  color: #8e959f;
-  transition: all 0.2s ease-in-out;
-  z-index: 999;
-}
-
-.closeButton:hover {
-  color: #37404e;
 }
 
 @media screen and (max-width: 576px) {
@@ -141,7 +133,7 @@
     transform: translateY(100vh);
   }
 
-  .closeButtonActive {
+  .closeButtonWrapperActive {
     position: absolute;
     top: 0;
     right: 0;

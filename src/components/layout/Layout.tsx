@@ -1,9 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import styles from "./Layout.module.css";
+import CloseButton from "../close-button/CloseButton";
 
 const Layout = () => {
   const [burgerMenuActive, setBurgerMenuActive] = useState(false);
+
+  useEffect(() => {
+    if (burgerMenuActive) {
+      document.body.style.position = "relative";
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [burgerMenuActive]);
 
   return (
     <div className={styles.layout}>
@@ -30,15 +42,15 @@ const Layout = () => {
               О себе
             </NavLink>
           </ul>
-          <span
-            className={`${styles.closeButton} ${burgerMenuActive ? styles.closeButtonActive : ""}`}
+          <div
+            className={`${styles.closeButtonWrapper} ${burgerMenuActive ? styles.closeButtonWrapperActive : ""}`}
             onClick={() => {
               setBurgerMenuActive(false);
             }}
             role="presentation"
           >
-            &times;
-          </span>
+            <CloseButton />
+          </div>
         </nav>
         <div
           className={`${styles.burgerMenuButton} ${burgerMenuActive ? styles.burgerMenuActive : ""}`}

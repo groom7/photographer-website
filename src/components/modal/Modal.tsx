@@ -4,6 +4,7 @@ import styles from "./Modal.module.css";
 import { IModalProps } from "../../utils/types";
 import getNextIndex from "../../utils/getNextIndex";
 import SliderArrow from "../slider-arrow/SliderArrow";
+import CloseButton from "../close-button/CloseButton";
 
 const portal = document.getElementById("portal") as HTMLElement;
 
@@ -30,15 +31,15 @@ const Modal: FC<IModalProps> = (props) => {
         imageIndex={imageIndex}
         galleryImages={galleryImages}
       />
-      <span
-        className={styles.closeButton}
+      <div
+        className={styles.closeButtonWrapper}
         onClick={() => {
           setModalActive(false);
         }}
         role="presentation"
       >
-        &times;
-      </span>
+        <CloseButton />
+      </div>
       <div className={styles.modalContent} role="presentation">
         <input
           className={styles.modalImage}

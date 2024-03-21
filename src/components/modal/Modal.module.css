@@ -19,22 +19,13 @@
   pointer-events: all;
 }
 
-.closeButton {
+.closeButtonWrapper {
   position: fixed;
-  font-family: 'Open Sans';
   right: 0px;
   top: 0px;
-  font-size: 80px;
-  line-height: 0.4;
-  letter-spacing: -6px;
+  width: 45px;
+  height: 45px;
   margin: 16px;
-  color: #8e959f;
-  transition: all 0.2s ease-in-out;
-  z-index: 999;
-}
-
-.closeButton:hover {
-  color: #37404e;
 }
 
 .arrow {
