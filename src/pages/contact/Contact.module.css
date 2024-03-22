@@ -1,4 +1,36 @@
 .contact {
   display: flex;
   flex-direction: column;
+  color: #777777;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contactListItem {
+  transition: all 0.25s ease-in-out;
+}
+
+.contactListItem:not(:last-child):hover {
+  color: #37404e
+}
+
+.contactListItemLink,
+.contactListItemText {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.contactListItemIcon{
+  width: 30px;
+  transition: all 0.25s ease-in-out;
+}
+
+
+.contactListItem:not(:last-child):hover .contactListItemIcon {
+  filter: brightness(0) saturate(100%) invert(22%) sepia(10%) saturate(1212%) hue-rotate(178deg) brightness(93%) contrast(87%);
 }
