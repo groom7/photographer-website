@@ -7,6 +7,7 @@
 .header {
   display: flex;
   flex-direction: column;
+  color: #8e959f;
 }
 
 .logoWrapper {
@@ -91,17 +92,14 @@
   .layout {
     display: flex;
     flex-direction: column;
+    gap: 16px;
     padding: 16px;
   }
 
   .header {
-    position: absolute;
-    left: 0;
-    top: 0;
     width: 100%;
     flex-direction: row;
     background-color: #f0f0f0;
-    padding: 16px;
   }
 
   .logoWrapper {
@@ -117,7 +115,7 @@
     display: flex;
     background-color: #f0f0f0;
     padding: 16px;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   .burgerMenuButton {

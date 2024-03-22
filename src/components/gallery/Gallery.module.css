@@ -25,3 +25,9 @@
 .arrow:hover {
   border-color: #37404e;
 }
+
+@media screen and (max-width: 576px) {
+  .gallery {
+    padding-top: 0px;
+  }
+}
