@@ -1,0 +1,33 @@
+.notFoundContainer {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 auto;
+  gap: 5px;
+  padding: 48px 0;
+  margin: 0 auto;
+  color: #777777;
+}
+
+.catIcon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+}
+
+.notFoundTitle,
+.backToHomeLink {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.backToHomeLink {
+  transition: all 0.25s ease-in-out;
+}
+
+.backToHomeLink:hover {
+  color: #37404e
+}

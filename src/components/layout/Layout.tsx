@@ -55,13 +55,13 @@ const Layout = () => {
             >
               Контакты
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to="/about"
-              className={styles.navLink}
+              className={`${styles.navLink} ${navLinkAbout}
               onClick={() => setBurgerMenuActive(false)}
             >
               О себе
-            </NavLink>
+            </NavLink> */}
           </ul>
           <div
             className={`${styles.closeButtonWrapper} ${burgerMenuActive ? styles.closeButtonWrapperActive : ""}`}

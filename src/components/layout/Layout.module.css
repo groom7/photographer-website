@@ -37,7 +37,7 @@
   transition: all 0.25s ease-in-out;
 }
 
-.navLink:nth-last-child(1) {
+.navLinkAbout {
   margin-top: 16px;
   font-size: 16px;
 }
