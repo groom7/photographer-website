@@ -32,7 +32,7 @@ const Layout = () => {
         >
           <ul className={styles.navList} id="navList">
             <NavLink to="/" className={styles.navLink} onClick={() => setBurgerMenuActive(false)}>
-              Главная
+              Портфолио
             </NavLink>
             <NavLink
               to="/publications"
