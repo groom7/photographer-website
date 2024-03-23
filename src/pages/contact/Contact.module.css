@@ -25,11 +25,18 @@
   align-items: center;
 }
 
-.contactListItemIcon{
+.contactListItemIconWrapper {
   width: 30px;
-  transition: all 0.25s ease-in-out;
+  height: 30px;
+  display: flex;
+  align-items: center;
 }
 
+.contactListItemIcon{
+  max-width: 100%;
+  max-height: 100%;
+  transition: all 0.25s ease-in-out;
+}
 
 .contactListItem:not(:last-child):hover .contactListItemIcon {
   filter: brightness(0) saturate(100%) invert(22%) sepia(10%) saturate(1212%) hue-rotate(178deg) brightness(93%) contrast(87%);

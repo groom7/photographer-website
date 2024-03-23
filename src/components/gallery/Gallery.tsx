@@ -81,7 +81,9 @@ const Gallery: FC = () => {
         </Masonry>
       </ResponsiveMasonry>
       <ScrollToTop showUnder={160}>
-        <div className={styles.arrow} />
+        <div className={styles.arrowWrapper}>
+          <div className={styles.arrow} />
+        </div>
       </ScrollToTop>
       <Modal
         modalActive={modalActive}

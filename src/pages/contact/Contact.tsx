@@ -12,25 +12,33 @@ const Contact: FC = () => {
       <ul className={styles.contactList}>
         <li className={styles.contactListItem}>
           <Link className={styles.contactListItemLink} to="tel:+79520431431">
-            <img className={styles.contactListItemIcon} src={callIcon} alt="call" />
+            <figure className={styles.contactListItemIconWrapper}>
+              <img className={styles.contactListItemIcon} src={callIcon} alt="call" />
+            </figure>
             Позвонить +79520431431
           </Link>
         </li>
         <li className={styles.contactListItem}>
           <Link className={styles.contactListItemLink} to="https://wa.me/+79520431431">
-            <img className={styles.contactListItemIcon} src={whatsappIcon} alt="whatsapp" />
+            <figure className={styles.contactListItemIconWrapper}>
+              <img className={styles.contactListItemIcon} src={whatsappIcon} alt="whatsapp" />
+            </figure>
             Написать в WatsApp
           </Link>
         </li>
         <li className={styles.contactListItem}>
           <Link className={styles.contactListItemLink} to="https://t.me/+79520431431">
-            <img className={styles.contactListItemIcon} src={telegramIcon} alt="telegram" />
+            <figure className={styles.contactListItemIconWrapper}>
+              <img className={styles.contactListItemIcon} src={telegramIcon} alt="telegram" />
+            </figure>
             Написать в Telegram
           </Link>
         </li>
         <li className={styles.contactListItem}>
           <p className={styles.contactListItemText}>
-            <img className={styles.contactListItemIcon} src={mailIcon} alt="mail" />
+            <figure className={styles.contactListItemIconWrapper}>
+              <img className={styles.contactListItemIcon} src={mailIcon} alt="mail" />
+            </figure>
             <span>E-mail:</span> ayratakhmetkhanov@gmail.com
           </p>
         </li>

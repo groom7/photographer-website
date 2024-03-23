@@ -12,18 +12,35 @@
   filter: brightness(1.1) contrast(0.95);
 }
 
-.arrow {
-  border: solid #8e959f;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-  padding: 15px;
+.arrowWrapper {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background-color: #8e959f;
+  border-radius: 50%;
+  opacity: 0.3;
   transition: all 0.2s ease-in-out;
 }
 
-.arrow:hover {
-  border-color: #37404e;
+.arrowWrapper:hover {
+  opacity: 1;
+}
+
+.arrowWrapper:hover {
+  opacity: 1;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: solid #37404e;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  transform: translate(-50%, -25%) rotate(-135deg);
+  -webkit-transform: translate(-50%, -25%) rotate(-135deg);
+  padding: 15px;
+  transition: all 0.2s ease-in-out;
 }
 
 @media screen and (max-width: 576px) {
