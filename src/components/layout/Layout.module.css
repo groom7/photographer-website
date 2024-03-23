@@ -26,6 +26,10 @@
   font-size: 16px;
 }
 
+.nav {
+  flex-direction: column;
+}
+
 .navList {
   display: flex;
   flex-direction: column;
@@ -44,6 +48,15 @@
 
 .navLink:hover {
   color: #37404e;
+}
+
+.copyright {
+  margin-top: 36px;
+}
+
+.copyrightTextWrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .burgerMenuButton {

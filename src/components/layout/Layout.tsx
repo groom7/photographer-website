@@ -31,37 +31,53 @@ const Layout = () => {
           role="presentation"
         >
           <ul className={styles.navList} id="navList">
-            <NavLink to="/" className={styles.navLink} onClick={() => setBurgerMenuActive(false)}>
-              Портфолио
-            </NavLink>
+            <li className={styles.navListItem}>
+              <NavLink to="/" className={styles.navLink} onClick={() => setBurgerMenuActive(false)}>
+                Портфолио
+              </NavLink>
+            </li>
+            <li className={styles.navListItem}>
+              <NavLink
+                to="/publications"
+                className={styles.navLink}
+                onClick={() => setBurgerMenuActive(false)}
+              >
+                Публикации
+              </NavLink>
+            </li>
+            <li className={styles.navListItem}>
+              <NavLink
+                to="/archive"
+                className={styles.navLink}
+                onClick={() => setBurgerMenuActive(false)}
+              >
+                Архив
+              </NavLink>
+            </li>
+            <li className={styles.navListItem}>
+              <NavLink
+                to="/contact"
+                className={styles.navLink}
+                onClick={() => setBurgerMenuActive(false)}
+              >
+                Контакты
+              </NavLink>
+            </li>
+            {/* <li className={styles.navListItem}>
             <NavLink
-              to="/publications"
-              className={styles.navLink}
-              onClick={() => setBurgerMenuActive(false)}
-            >
-              Публикации
-            </NavLink>
-            <NavLink
-              to="/archive"
-              className={styles.navLink}
-              onClick={() => setBurgerMenuActive(false)}
-            >
-              Архив
-            </NavLink>
-            <NavLink
-              to="/contact"
-              className={styles.navLink}
-              onClick={() => setBurgerMenuActive(false)}
-            >
-              Контакты
-            </NavLink>
-            {/* <NavLink
               to="/about"
               className={`${styles.navLink} ${navLinkAbout}
               onClick={() => setBurgerMenuActive(false)}
             >
               О себе
-            </NavLink> */}
+            </NavLink>
+            </li> */}
+            <li className={`${styles.navListItem} ${styles.copyright}`}>
+              <p className={styles.copyrightTextWrapper}>
+                <span>Айрат Ахметханов</span>
+                <span>Все права защищены © {new Date().getFullYear()}</span>
+              </p>
+            </li>
           </ul>
           <div
             className={`${styles.closeButtonWrapper} ${burgerMenuActive ? styles.closeButtonWrapperActive : ""}`}
