@@ -14,7 +14,7 @@
   transition: all 0.25s ease-in-out;
 }
 
-.contactListItem:not(:last-child):hover {
+.contactListItem:not(:nth-last-child(1 - 2)):hover {
   color: #37404e
 }
 
@@ -38,6 +38,10 @@
   transition: all 0.25s ease-in-out;
 }
 
-.contactListItem:not(:last-child):hover .contactListItemIcon {
+.contactListItem:not(.contactListItem:nth-last-child(2)):hover .contactListItemIcon {
   filter: brightness(0) saturate(100%) invert(22%) sepia(10%) saturate(1212%) hue-rotate(178deg) brightness(93%) contrast(87%);
+}
+
+.contactListItem:nth-last-child(1) {
+  margin-top: 16px;
 }

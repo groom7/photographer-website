@@ -42,6 +42,9 @@ const Contact: FC = () => {
             <span>E-mail:</span> ayratakhmetkhanov@gmail.com
           </p>
         </li>
+        <li className={styles.contactListItem}>
+          <p className={styles.contactListItemText}>Все права защищены © Айрат Ахметханов</p>
+        </li>
       </ul>
     </div>
   );
