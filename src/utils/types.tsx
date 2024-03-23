@@ -14,3 +14,9 @@ export interface IModalProps {
   setImageIndex: React.Dispatch<React.SetStateAction<number>>;
   galleryImages: string[];
 }
+
+export type TGetFilesSourcesArray = (source: __WebpackModuleApi.RequireContext) => string[];
+
+export interface IGalleryProps {
+  images: string[];
+}
