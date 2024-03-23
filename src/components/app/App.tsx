@@ -6,6 +6,7 @@ import MainPage from "../../pages/main-page/MainPage";
 import Contact from "../../pages/contact/Contact";
 import NotFoundComponent from "../NotFound/NotFoundComponent";
 import PublicationsPage from "../../pages/publications-page/PublicationsPage";
+import ArchivePage from "../../pages/archive-page/ArchivePage";
 
 const App = () => {
   return (
@@ -13,7 +14,7 @@ const App = () => {
       <Route path="/" element={<Layout />}>
         <Route index path="/" element={<MainPage />} />
         <Route index path="/publications" element={<PublicationsPage />} />
-        <Route index path="/archive" element={<MainPage />} />
+        <Route index path="/archive" element={<ArchivePage />} />
         <Route index path="/contact" element={<Contact />} />
         {/* <Route index path="/about" element={<MainPage />} /> */}
         <Route path="*" element={<NotFoundComponent />} />
