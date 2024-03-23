@@ -8,7 +8,7 @@ const images = getFilesSourcesArray(require.context("../../assets/images/publica
 const PublicationsPage: FC = () => {
   return (
     <div className={styles.publicationsWrapper}>
-      <title className={styles.title}>Hi home Казань 01 (03) Январь/Февраль 2024</title>
+      <title className={styles.title}>Журнал Hi home Казань 01 (03) Январь/Февраль 2024</title>
       <Gallery images={images} />
     </div>
   );

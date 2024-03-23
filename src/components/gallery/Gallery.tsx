@@ -53,7 +53,7 @@ const Gallery: FC<IGalleryProps> = (props) => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [imageIndex]);
+  }, [imageIndex, images]);
 
   return (
     <div className={styles.gallery}>
